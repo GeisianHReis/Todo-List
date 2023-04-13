@@ -18,6 +18,11 @@
       rel="stylesheet"
       type="text/css"
       href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/bold/style.css">
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/duotone/style.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -48,7 +53,7 @@
                     </span>
                 </div> 
             </section>   
-            <section class="empty_tasks">
+            <section class="empty_tasks hidden" >
                 <img src="./assets/empty-tasks.svg" alt="Imagem de exibição por não haver tasks">
                 <div>
                     <p>Você ainda não tem tarefas cadastradas</p>
@@ -57,10 +62,24 @@
             </section>
             <ul class="tasks_list">
                 <li class="task">
-                    <p>
-                        Dar banho no cachorro
-                    </p>
+                    <div>
+                        <i class="ph-duotone ph-circle-dashed"></i>
+                        <p>
+                            Dar banho no cachorro
+                        </p>
+                    </div>
+                    <i class="ph-duotone ph-trash"></i>
                 </li>
+                <li class="task">
+                    <div>
+                        <i class="ph-duotone ph-check-circle"></i>
+                        <p>
+                            Dar banho no cachorro
+                        </p>
+                    </div>
+                    <i class="ph-duotone ph-trash"></i>
+                </li>
+                
             </ul>
         </main>
     </div> 

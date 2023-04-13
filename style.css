@@ -179,3 +179,16 @@
   .empty_tasks div p:first-child {
     font-weight: bold;
   }
+
+  .tasks_list {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    max-width: 46rem;
+  }
+
+  .hidden {
+    display: none;
+  }
