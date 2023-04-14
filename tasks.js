@@ -11,3 +11,7 @@ let tasks = [
     }
 
 ]
+
+const addTasksInput = document.getElementById("tasks_input");
+const addTasksButton = document.getElementsByClassName("button")[0];
+const tasksList = document.getElementById("tasks_list");
