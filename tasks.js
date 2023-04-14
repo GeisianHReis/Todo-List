@@ -1,11 +1,16 @@
+function uid(){
+    return Date.now().toString(16) + Math.random().toString(16).substring(2);
+
+}
+
 let tasks = [
     {
-        id: 1,
+        id: uid(),
         nome: 'Dar banho no cachorro',
         toDo: false
     },
     {
-        id: 2,
+        id: uid(),
         nome: 'Visto na esquina',
         toDo: true
     }
