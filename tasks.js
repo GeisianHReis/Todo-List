@@ -15,3 +15,20 @@ let tasks = [
 const addTasksInput = document.getElementById("tasks_input");
 const addTasksButton = document.getElementsByClassName("button")[0];
 const tasksList = document.getElementById("tasks_list");
+
+function addTask(event) {
+    event.preventDefault();
+    console.log("Add Task");
+}
+
+function deleteTask(event){
+    console.log("delete Task")
+}
+
+function completeTask(event){
+    console.log("complete Task")
+}
+
+function incompleteTask(event){
+    console.log("incomplete Task")
+}

@@ -33,7 +33,7 @@
         <main>
             <form class="form">
                 <input id="tasks_input" type="text" placeholder="Adicione uma nova tarefa" />
-                <button type="submit">Criar <i class="ph-bold ph-plus-circle"></i> </button>
+                <button type="submit" onclick="addTask(event)">Criar <i class="ph-bold ph-plus-circle"></i> </button>
             </form>
             <section class="tasks_counter">
                 <div class="all_tasks">
@@ -63,21 +63,21 @@
             <ul id="tasks_list" class="tasks_list">
                 <li class="task todo">
                     <div>
-                        <i class="ph-duotone ph-circle-dashed check_btn"></i>
+                        <i class="ph-duotone ph-circle-dashed check_btn" onclick="completeTask()"></i>
                         <p>
                             Dar banho no cachorro
                         </p>
                     </div>
-                    <i class="ph-duotone ph-trash delete_btn"></i>
+                    <i class="ph-duotone ph-trash delete_btn" onclick="deleteTask()"></i>
                 </li>
                 <li class="task done">
                     <div>
-                        <i class="ph-duotone ph-check-circle check_btn"></i>
+                        <i class="ph-duotone ph-check-circle check_btn" onclick="incompleteTask()"></i>
                         <p class="risked">
                             Dar banho no cachorro
                         </p>
                     </div>
-                    <i class="ph-duotone ph-trash delete_btn"></i>
+                    <i class="ph-duotone ph-trash delete_btn" onclick="deleteTask()"></i>
                 </li>
                 
             </ul>
