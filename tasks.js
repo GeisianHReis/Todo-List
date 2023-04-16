@@ -24,6 +24,16 @@ const tasksList = document.getElementById("tasks_list");
 function addTask(event) {
     event.preventDefault();
     console.log("Add Task");
+
+    const newTaskName = addTasksInput.value;
+
+    const newTaks = {
+        id: uid,
+        nome: newTaskName,
+        toDo: true
+    }
+
+    tasks.push(newTaks);
 }
 
 function deleteTask(event){
