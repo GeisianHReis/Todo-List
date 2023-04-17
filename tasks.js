@@ -94,3 +94,8 @@ function completeTask(event){
 function incompleteTask(event){
     console.log("incomplete Task")
 }
+
+for(const task of tasks) {
+    const tasksItem = createNewTaskElement(task.nome, task.id);
+    tasksList.appendChild(tasksItem);
+}
