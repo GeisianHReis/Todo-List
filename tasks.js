@@ -79,6 +79,8 @@ function addTask(event) {
     }
 
     tasks.push(newTaks);
+    const taskElement = createNewTaskElement(newTaks.nome, newTaks.id);
+    tasksList.appendChild(taskElement);
 }
 
 function deleteTask(event){
