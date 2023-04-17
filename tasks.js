@@ -88,7 +88,25 @@ function deleteTask(event){
 }
 
 function completeTask(event){
-    console.log("complete Task")
+    const todoIcon = event.target;
+    todoIcon.classList.add("hidden");
+
+    const taskToCompleteId = todoIcon.parentNode.parentNode.id;
+    const taskToComplete = document.getElementById(taskToCompleteId);
+
+    taskToComplete.classList.add("done");
+    taskToComplete.classList.remove("todo");
+
+    const doneIcon = todoIcon.parentNode.childNodes[1];
+    doneIcon.classList.remove("hidden");
+
+    tasks.find((item) => {
+        if (item.id === taskToCompleteId){
+            item.toDo = false;
+        }
+
+        return item.id === taskToCompleteId;
+    })
 }
 
 function incompleteTask(event){
