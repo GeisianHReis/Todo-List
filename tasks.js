@@ -84,7 +84,17 @@ function addTask(event) {
 }
 
 function deleteTask(event){
-    console.log("delete Task")
+    const taskToDeleteId = event.target.parentNode.id;
+    const taskToDelete = document.getElementById(taskToDeleteId);
+
+    const taskWithoutDeletedOne = tasks.filter((
+        task) => {
+            return task.id !== taskToDeleteId;
+        }
+    );
+
+    tasks = taskWithoutDeletedOne;
+    tasksList.removeChild(taskToDelete);
 }
 
 function completeTask(event){
@@ -126,6 +136,7 @@ function incompleteTask(event){
         }
     })
 }
+
 
 for(const task of tasks) {
     const tasksItem = createNewTaskElement(task.nome, task.id);
