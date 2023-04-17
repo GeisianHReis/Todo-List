@@ -7,7 +7,7 @@ let tasks = [
     {
         id: uid(),
         nome: 'Dar banho no cachorro',
-        toDo: false
+        toDo: true
     },
     {
         id: uid(),
@@ -20,6 +20,25 @@ let tasks = [
 const addTasksInput = document.getElementById("tasks_input");
 const addTasksButton = document.getElementsByClassName("button")[0];
 const tasksList = document.getElementById("tasks_list");
+const todoCounterText = document.getElementById("todo_count");
+const doneCounterText = document.getElementById("done_count");
+
+function counter() {
+    let toDoCounter = 0;
+    let doneCounter = 0;
+
+    toDoCounter = tasks.length;
+    todoCounterText.innerText = `${toDoCounter}`;
+
+    for(const task of tasks) {
+        if(task.toDo === false) {
+            doneCounter++;
+        }
+    }
+    doneCounterText.innerText = `${doneCounter}`;
+}
+
+counter();
 
 
 function createNewTaskElement(taskName, taskId) {
@@ -73,7 +92,7 @@ function addTask(event) {
     const newTaskName = addTasksInput.value;
 
     const newTaks = {
-        id: uid,
+        id: uid(),
         nome: newTaskName,
         toDo: true
     }
@@ -81,20 +100,26 @@ function addTask(event) {
     tasks.push(newTaks);
     const taskElement = createNewTaskElement(newTaks.nome, newTaks.id);
     tasksList.appendChild(taskElement);
+
+    addTasksInput.value = '';
+    counter();
 }
 
 function deleteTask(event){
     const taskToDeleteId = event.target.parentNode.id;
     const taskToDelete = document.getElementById(taskToDeleteId);
 
-    const taskWithoutDeletedOne = tasks.filter((
-        task) => {
+    const taskWithoutDeletedOne = tasks.filter(
+        (task) => {
             return task.id !== taskToDeleteId;
+            
         }
     );
 
     tasks = taskWithoutDeletedOne;
     tasksList.removeChild(taskToDelete);
+
+    counter();
 }
 
 function completeTask(event){
@@ -118,6 +143,8 @@ function completeTask(event){
             item.toDo = false;
         }
     })
+
+    counter();
 }
 
 function incompleteTask(event){
@@ -141,6 +168,8 @@ function incompleteTask(event){
             item.toDo = true;
         }
     })
+
+    counter();
 }
 
 
