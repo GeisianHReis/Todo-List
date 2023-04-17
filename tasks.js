@@ -104,13 +104,27 @@ function completeTask(event){
         if (item.id === taskToCompleteId){
             item.toDo = false;
         }
-
-        return item.id === taskToCompleteId;
     })
 }
 
 function incompleteTask(event){
-    console.log("incomplete Task")
+    const doneIcon = event.target;
+    doneIcon.classList.add("hidden");
+
+    const taskToIncompleteId = doneIcon.parentNode.parentNode.id;
+    const taskToIncomplete = document.getElementById(taskToIncompleteId);
+
+    taskToIncomplete.classList.add("todo");
+    taskToIncomplete.classList.remove("done");
+
+    const todoIcon = doneIcon.parentNode.childNodes[0];
+    todoIcon.classList.remove("hidden");
+
+    tasks.find((item) => {
+        if (item.id === taskToIncompleteId){
+            item.toDo = true;
+        }
+    })
 }
 
 for(const task of tasks) {
