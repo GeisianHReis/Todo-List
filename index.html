@@ -18,6 +18,11 @@
       rel="stylesheet"
       type="text/css"
       href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/bold/style.css">
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/duotone/style.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -28,37 +33,53 @@
         <main>
             <form class="form">
                 <input type="text" placeholder="Adicione uma nova tarefa" />
-                <button type="submit">Criar</button>
+                <button type="submit">Criar <i class="ph-bold ph-plus-circle"></i> </button>
             </form>
-            <section class="counter">
-                <p>
+            <section class="tasks_counter">
+                <div class="all_tasks">
                     <strong>
                         Tarefas criadas
                     </strong>
-                    <span>
+                    <span class="count">
                         3
                     </span>
-                </p>
-                <p>
+                </div>
+                <div class="done_tasks">
                     <strong>
                         Tarefas concluídas
                     </strong>
-                    <span>
+                    <span class="count">
                         4
                     </span>
-                </p> 
+                </div> 
             </section>   
-            <section class="empty_tasks">
+            <section class="empty_tasks hidden" >
                 <img src="./assets/empty-tasks.svg" alt="Imagem de exibição por não haver tasks">
-                <p>Você ainda não tem tarefas cadastradas</p>
-                <p>Crie tarefas e organize seus itens a fazer</p>
+                <div>
+                    <p>Você ainda não tem tarefas cadastradas</p>
+                    <p>Crie tarefas e organize seus itens a fazer</p>
+                </div>
             </section>
             <ul class="tasks_list">
-                <li class="task">
-                    <p>
-                        Dar banho no cachorro
-                    </p>
+                <li class="task todo">
+                    <div>
+                        <i class="ph-duotone ph-circle-dashed check_btn"></i>
+                        <p>
+                            Dar banho no cachorro
+                        </p>
+                    </div>
+                    <i class="ph-duotone ph-trash delete_btn"></i>
                 </li>
+                <li class="task done">
+                    <div>
+                        <i class="ph-duotone ph-check-circle check_btn"></i>
+                        <p class="risked">
+                            Dar banho no cachorro
+                        </p>
+                    </div>
+                    <i class="ph-duotone ph-trash delete_btn"></i>
+                </li>
+                
             </ul>
         </main>
     </div> 
