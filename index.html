@@ -32,24 +32,24 @@
         </header>
         <main>
             <form class="form">
-                <input type="text" placeholder="Adicione uma nova tarefa" />
-                <button type="submit">Criar <i class="ph-bold ph-plus-circle"></i> </button>
+                <input id="tasks_input" type="text" placeholder="Adicione uma nova tarefa" />
+                <button type="submit" onclick="addTask(event)">Criar <i class="ph-bold ph-plus-circle"></i> </button>
             </form>
             <section class="tasks_counter">
                 <div class="all_tasks">
                     <strong>
                         Tarefas criadas
                     </strong>
-                    <span class="count">
-                        3
+                    <span id="todo_count" class="count">
+                        0
                     </span>
                 </div>
                 <div class="done_tasks">
                     <strong>
                         Tarefas concluídas
                     </strong>
-                    <span class="count">
-                        4
+                    <span id="done_count" class="count">
+                        0
                     </span>
                 </div> 
             </section>   
@@ -60,28 +60,11 @@
                     <p>Crie tarefas e organize seus itens a fazer</p>
                 </div>
             </section>
-            <ul class="tasks_list">
-                <li class="task todo">
-                    <div>
-                        <i class="ph-duotone ph-circle-dashed check_btn"></i>
-                        <p>
-                            Dar banho no cachorro
-                        </p>
-                    </div>
-                    <i class="ph-duotone ph-trash delete_btn"></i>
-                </li>
-                <li class="task done">
-                    <div>
-                        <i class="ph-duotone ph-check-circle check_btn"></i>
-                        <p class="risked">
-                            Dar banho no cachorro
-                        </p>
-                    </div>
-                    <i class="ph-duotone ph-trash delete_btn"></i>
-                </li>
+            <ul id="tasks_list" class="tasks_list">
                 
             </ul>
         </main>
+        <script src="tasks.js"></script>
     </div> 
 </body>
 </html>
